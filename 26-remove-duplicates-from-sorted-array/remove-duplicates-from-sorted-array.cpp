@@ -1,18 +1,15 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        set<int>stt;
-        // insert all elements in set
-        for(int num : nums){
-            stt.insert(num);
+        int n=nums.size();
+        int i=0; // pointer for last unique element
+        if(nums.empty()) return 0;
+        for(int j=1;j<n;j++){
+            if(nums[j]!=nums[i]){
+                i++;
+                nums[i]=nums[j];
+            }
         }
-        // copy the elements from set to original array
-        int i=0;
-        for(int num: stt){
-            nums[i]=num;
-            i++;
-        }
-        // size of set is the number of unique elements:
-        return stt.size();
+        return i+1;
     }
 };
