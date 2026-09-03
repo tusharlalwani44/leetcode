@@ -17,6 +17,8 @@ public:
                 }
             }
         }
+        // If the minimum value is odd, we can always make all elements odd.
+        // If the minimum value is even and all elements are even, we return true.
         return true;
 
     }
