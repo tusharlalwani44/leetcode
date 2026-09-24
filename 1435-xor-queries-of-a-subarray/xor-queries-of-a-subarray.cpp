@@ -7,7 +7,7 @@ public:
             arr[i]=arr[i]^arr[i-1];
         }
         vector<int>result;
-        for(auto q:queries){
+        for(const auto&q:queries){
             int left=q[0];
             int right=q[1];
             if(left==0){
